@@ -17,7 +17,7 @@ First clone the repo and `cd` into the directory:
 
 ```bash
 $ git clone https://github.com/Qurram555/initvpn
-$ cd initvpn
+$ cd ~/initvpn/src
 ```
 
 Then run this to generate the executable:
@@ -30,7 +30,7 @@ It's Golang. What do you expect?
 
 ### Requirements
 
-This requires [openvpn][openvpn].
+This requires [openvpn].
 
 To install this on a `yum`-based distro:
 
@@ -66,14 +66,21 @@ $ ./initvpn
 and you're done. You'll be connected to a server in the US. Welcome to the US!
 
 You can give a country if you want. For example, if you want to connect to a server
-in Japan:
+in South Korea:
 
 ```bash
-$ ./initvpn UK
+$ ./initvpn KR
 ```
 
-You may need superuser privileges. Don't worry, I'm not running `rm -rf --no-preserve-root /`
+You may need superuser privileges when you arent using linux/deb. Don't worry, I'm not running `rm -rf --no-preserve-root /`
 underneath. It's for `openvpn`.
+
+### To run executable on Linux/Ubuntu/Deb
+```
+$ sudo cp ~/initvpn/bin /usr/local/bin
+
+$ sudo initvpn KR 
+```
 
 ### Contributing
 
@@ -82,7 +89,8 @@ All patches welcome!
 ### Disclaimer
 
 This is completely insecure. Please do not use this for anything important. Get a
-real and secure VPN. This is mostly a fun tool to get a VPN for a few minutes.
+real and secure VPN. This is mostly a fun tool to get a VPN for a few minutes. To 
+make it secure add your own certificates at the end of file. 
 
 ### License
 
