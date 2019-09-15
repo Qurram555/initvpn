@@ -17,7 +17,7 @@ First clone the repo and `cd` into the directory:
 
 ```bash
 $ git clone https://github.com/Qurram555/initvpn
-$ cd ~/initvpn/src
+$ cd ~/initvpn-master/src
 ```
 
 Then run this to generate the executable:
@@ -32,28 +32,11 @@ It's Golang. What do you expect?
 
 This requires [openvpn].
 
-To install this on a `yum`-based distro:
-
-```bash
-$ sudo dnf install openvpn
-```
-
 If you're on a `apt`-based distro:
 
 ```bash
 $ sudo apt-get install openvpn
 ```
-
-And on Mac OSX:
-
-```bash
-$ brew install openvpn
-$ # add the executable to your path
-$ export PATH=$(brew --prefix openvpn)/sbin:$PATH
-```
-
-Tested and works on Fedora 23 and MacOS Sierra `10.12.6`. Dunno about
-Windows. Patches welcome.
 
 ### Usage
 
@@ -77,7 +60,7 @@ underneath. It's for `openvpn`.
 
 ### To run executable on Linux/Ubuntu/Deb
 ```
-$ sudo cp ~/initvpn/bin /usr/local/bin
+$ sudo cp ~/initvpn-master/bin /usr/local/bin
 
 $ sudo initvpn KR 
 ```
