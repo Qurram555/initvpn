@@ -46,15 +46,15 @@ func main() {
 	}
 	URL := "http://www.vpngate.net/api/iphone/"
 
-	fmt.Printf("[autovpn] getting server list\n")
+	fmt.Printf("[initvpn] getting server list\n")
 	response, err := http.Get(URL)
 	check(err)
 
 	defer response.Body.Close()
 	scanner := bufio.NewScanner(response.Body)
 
-	fmt.Printf("[autovpn] parsing response\n")
-	fmt.Printf("[autovpn] looking for %s\n", chosenCountry)
+	fmt.Printf("[initvpn] parsing response\n")
+	fmt.Printf("[initvpn] looking for %s\n", chosenCountry)
 
 	counter := 0
 	for scanner.Scan() {
@@ -73,12 +73,12 @@ func main() {
 			continue
 		}
 
-		fmt.Printf("[autovpn] writing config file\n")
+		fmt.Printf("[initvpn] writing config file\n")
 		err = ioutil.WriteFile("/tmp/openvpnconf", conf, 0664)
 		check(err)
 		err = AppendStringToFile("/tmp/openvpnconf", "auth-nocache")
 		check(err)
-		fmt.Printf("[autovpn] running openvpn\n")
+		fmt.Printf("[initvpn] running openvpn\n")
 
 		cmd := exec.Command("sudo", "openvpn", "/tmp/openvpnconf")
 		cmd.Stdout = os.Stdout
@@ -93,7 +93,7 @@ func main() {
 		cmd.Start()
 		cmd.Wait()
 
-		fmt.Printf("[autovpn] try another VPN? (y/n) ")
+		fmt.Printf("[initvpn] try another VPN? (y/n) ")
 		var input string
 		fmt.Scanln(&input)
 		if strings.ToLower(input) == "n" {
