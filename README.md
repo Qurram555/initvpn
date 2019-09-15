@@ -17,7 +17,7 @@ First clone the repo and `cd` into the directory:
 
 ```bash
 $ git clone https://github.com/Qurram555/initvpn
-$ cd ~/initvpn-master/src
+$ cd ~/initvpn/src
 ```
 
 Then run this to generate the executable:
@@ -60,7 +60,7 @@ underneath. It's for `openvpn`.
 
 ### To run executable on Linux/Ubuntu/Deb
 ```
-$ sudo cp ~/initvpn-master/bin /usr/local/bin
+$ sudo cp ~/initvpn/bin /usr/local/bin
 
 $ sudo initvpn KR 
 ```
