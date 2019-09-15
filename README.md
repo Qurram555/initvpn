@@ -66,10 +66,10 @@ $ ./initvpn
 and you're done. You'll be connected to a server in the US. Welcome to the US!
 
 You can give a country if you want. For example, if you want to connect to a server
-in Japan:
+in South Korea:
 
 ```bash
-$ ./initvpn UK
+$ ./initvpn KR
 ```
 
 You may need superuser privileges. Don't worry, I'm not running `rm -rf --no-preserve-root /`
